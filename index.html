@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Invitation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #e1ade6f9; /* Light Blue */
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffe4e1; /* Misty Rose */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #invitation {
+            /* Your existing styles for the invitation div */
+        }
+
+        #result {
+            /* Your existing styles for the result div */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <!-- Your existing content -->
+        <div id="invitation">
+            <img src="https://media.tenor.com/ns27oDL6PPIAAAAM/cats-cat-with-flower.gif" alt="Valentine's Date Image">
+            <h2 id="noSection">Will you be my Valentine's date?</h2>
+            <button onclick="respondToInvitation('Yes')">Yes</button>
+            <button onclick="respondToInvitation('No')">No</button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function respondToInvitation(response) {
+            if (response === 'Yes') {
+                alert('Te amo mucho mi amorcito eres la mejor muaaaa');
+
+                // Create an img element
+                const gifElement = document.createElement('img');
+
+                // Set the src attribute to the URL of your GIF
+                gifElement.src = 'https://media1.tenor.com/m/arqlNu8gyJYAAAAC/cat-cat-jumping.gif';
+
+                // Append the img element to the result div
+                document.getElementById('result').appendChild(gifElement);
+            } else if (response === 'No') {
+                // Get a random number between 0 and 1
+                const random = Math.random();
+
+                // Get the height of the document
+                const documentHeight = document.documentElement.scrollHeight;
+
+                // Calculate the target scroll position based on the random number
+                const targetScrollPosition = Math.floor(random * documentHeight);
+
+                // Find the element with id "noSection"
+                const noSectionElement = document.getElementById('noSection');
+
+                // Scroll the element into view with smooth behavior
+                noSectionElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
